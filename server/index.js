@@ -6,6 +6,7 @@ import userRouter from "./routes/user.js";
 import tourRouter from "./routes/tour.js";
 import dotenv from "dotenv";
 import milestone from './routes/milestone.js'
+import caretaker from './routes/caretaker.js'
 const app = express();
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(cors());
 app.use("/users", userRouter); // http://localhost:5000/users/signup
 app.use("/project", tourRouter);
 app.use('/milestone', milestone)
+app.use('/caretaker', caretaker)
 
 app.get("/", (req, res) => {
   res.send("Welcome to tour API");

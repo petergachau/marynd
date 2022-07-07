@@ -10,6 +10,10 @@ import Login from "./Login";
 
 import { useNavigate } from "react-router-dom";
 import StudentsProjects from "./StudentsProjects";
+import Admin from "./Admin";
+import Caretaker from "./Caretaker";
+import Teanant from "./Teanant";
+
 
 
 const Main = () => {
@@ -24,7 +28,22 @@ useEffect(() => {
 
 dispatch(getProjectsByUser(userId))
 }, [userId])
-  return (
+ 
+if(user?.result?.isAdmin){
+    return(
+        <div style={{marginTop:'10rem'}}>
+            <Admin/>
+        </div>
+    )
+}
+if(user?.result?.caretaker){
+    return(
+        <div style={{marginTop:'10rem'}}>
+            <Caretaker/>
+        </div>
+    )
+}else{
+    return (
     <>
     <div className="main">
     <div className="right" style={{margin:'10rem'}}>
@@ -50,9 +69,21 @@ dispatch(getProjectsByUser(userId))
 Are you a supervisor but logged in with <br></br> a student's level account? <br></br> Send a supervision request to coordinator@sppms.com. <br></br> In the request, attach your national ID and your staff ID.<br></br> Note that the system admin may schedule a <br></br>zoom meeting with you to <br></br> confirm your identity.
         </p>
     </div>
-   
+   {/* {user?.result?.isAdmin?'hello' :'not admin'} */}
     </div>
     </>
-       )}
+       )
+}
+
+
+
+
+
+
+
+
+
+}
+
 
 export default Main

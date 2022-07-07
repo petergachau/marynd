@@ -97,4 +97,3 @@ export const getProjectsByUser = createAsyncThunk(
     },
   });
   export default projectSlice.reducer;
-  

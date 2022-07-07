@@ -17,7 +17,7 @@ import NotFound from "./pages/NotFound";
 import StudentProjectCreate from './pages/StudentProjectCreate'
 import TagTours from "./pages/TagTours";
 import Main from "./pages/Main";
-import Milestone from "./pages/Milestone";
+import Caretaker from "./pages/Caretaker";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ function App() {
           <Route path="/addproject" element={<StudentProjectCreate />} />
           <Route path="/editproject" element={<StudentProjectCreate />} />
               <Route path="/main" element={<Main />} />
-              <Route path="/milestone" element={<Milestone />} />
+              <Route path="/milestone" element={<Caretaker />} />
               <Route path="/mileProject" element={<MileProjects />} />
 
 

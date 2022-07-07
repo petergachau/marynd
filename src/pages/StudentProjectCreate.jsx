@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {toast} from 'react-toastify'
 import { createProject } from '../redux/features/projectSlice';
 import Projects from './Projects';
-import Milestone from './Milestone';
+import Milestone from './Caretaker';
 const StudentProjectCreate = () => {
   const dispatch=useDispatch()
   const navigate=useNavigate()
@@ -35,7 +35,7 @@ const StudentProjectCreate = () => {
         const updateddata={...users, name:user?.result.name}
        
        dispatch(createProject(updateddata,toast))
-       navigate('/main')
+      
        }
    }
   const cancelCourse = () => { 
